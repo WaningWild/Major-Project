@@ -1,0 +1,134 @@
+\documentclass[11pt,fleqn,twoside]{article}
+\usepackage{makeidx}
+\makeindex
+\usepackage{palatino} %or {times} etc
+\usepackage{plain} %bibliography style 
+\usepackage{amsmath} %math fonts - just in case
+\usepackage{amsfonts} %math fonts
+\usepackage{amssymb} %math fonts
+\usepackage{lastpage} %for footer page numbers
+\usepackage{fancyhdr} %header and footer package
+\usepackage{mmpv2} 
+\usepackage{url}
+
+% the following packages are used for citations - You only need to include one. 
+%
+% Use the cite package if you are using the numeric style (e.g. IEEEannot). 
+% Use the natbib package if you are using the author-date style (e.g. authordate2annot). 
+% Only use one of these and comment out the other one. 
+\usepackage{cite}
+%\usepackage{natbib}
+
+\begin{document}
+
+\name{Joseph James}
+\userid{jgj2}
+\projecttitle{Mobile Vision Based Risk Detection: \\Using computer vision to detect potential risks in a Parrot AR.Drone 2.0}
+\projecttitlememoir{Mobile Vision Based Risk Detection} %same as the project title or abridged version for page header
+\reporttitle{Methodology for the project}
+\version{0.1}
+\docstatus{Draft}
+\modulecode{CS39440}
+\degreeschemecode{G400}
+\degreeschemename{Computer Science}
+\supervisor{Myra Wilson} % e.g. Neil Taylor
+\supervisorid{mxw}
+\wordcount{}
+
+%optional - comment out next line to use current date for the document
+%\documentdate{10th February 2014} ma
+\mmp
+ .
+\setcounter{tocdepth}{3} %set required number of level in table of contents
+
+
+
+%==============================================================================
+\section{Introduction}
+%==============================================================================
+For this project, a methodology will have to be followed. This is in order to keep the project on track and keeping forward progress. This document will introduce the initial methodology, explaining the thoughts behind the decisions and showing the initial plan.\\
+
+The initial methodology will draw from mainly scrum and kanban, taking an iterative approach to development and process improvement from scrum and using a kanban workflow for use throughout the sprints.\\
+
+Sprints are being used so constant improvement can be made to the process being used, as well as allowing for artifacts like burn-down charts to be introduced. The kanban system is used during the sprint to ensure work is done effectively and fully tested, it also forces a limit, which will stop over-working, and provides a motivation to finish all the tasks for the sprint, which will stop under-working. 
+%==================================================================== ==========
+\section{Overarching methodology}
+%==============================================================================
+\begin{description}
+  \item[Sprints]
+    Each development iteration will take place in a sprint, with each sprint lasting 2 weeks. During this time, a particular number of stories should be completed from the sprint backlog and if they're not, they'll be added back onto the project backlog. During the sprint, a kanban work flow will be used.\\
+    
+   The 2 week sprint will allow for supervisory meetings at the end of the sprint and beginning of a sprint, as well as a mid-sprint meeting. At the beginning of the sprint, the meeting can discuss what is going to be done during the week and any issues that are going to effect the upcoming sprint. This same meeting would also be used for the end of each sprint, so issues that affected the previous sprint can start to be resolved or discussed and the supervisor can be made aware of the progress that has been made.\\
+   
+   The mid-sprint meeting would be used to discuss issues with work that is currently happening, how it's going and to also get help with anything that is particularly difficult.\\
+   
+  \item[Kanban work flow]
+    This will be used with the stories for the current sprint and will have the following stages:
+    \begin{description}
+      \item[Sprint Backlog]
+        Contains all the stories from the current sprint that have not yet been completed. At the start of this process, 10 stories will be added to each sprint backlog. This is an arbitrary number, which will be altered depending on the amount of work that is necessary to be undertaken throughout the project.
+      \item[Active Stories]
+        This will contain the stories currently being worked on, with an initial work in progress limit of 4. This number is arbitrary and will likely change during the process if either too much work is being done, or not enough.
+      \item[Testing]
+        Stories that have been completed will then move into the testing stage of the value stream, which is also included in the WIP limit. For example, 2 stories can be active and 2 can be in testing but no more may be moved into the active stories until the stories in the testing stage are done. Having this stage will ensure proper testing of all parts of the system, as if something does not pass a test it will be moved back into the active stories category.
+      \item[Completed]
+        Any stories that are finished and have passed all tests will be held in the completed stage. These stories shouldn't need to be touched again once they've been moved into this stage and should only be moved back out if it's absolutely necessary.
+    \end{description}
+  \item[Sprint Review]
+    As this is a single person project, it will be impossible to have a discussion with peers about how the sprint itself went. However, at the end of each sprint, a small document discussing the sprint will be produced. In this, any problems with the sprint itself will be highlighted, for example if there was too much work for the single sprint or too little work so the sprint ended early, or if the WIP limit was too small so it slowed down progress or too large, so the work was overwhelming. 
+    
+    After the discussion of the issues, a potential solution will be chosen and noted in the document. This solution will be implemented in the next sprint and this will allow for an evolving method, which will iteratively improve. This will also allow for documentation of the changes in the process, which will be useful for the final report.
+  \item[Progress Review]
+     Again, with no peers working on this project, it will be impossible to have a scheduled meeting to discuss progress made. The solution to this problem remains the same however, in that a document will be produced detailing work that was done, issues that came up in the work and if there were issues, how they'll be resolved.\\
+     
+     This document will be similar to the sprint review, however it will also allow for critical analysis of how effective the process is. The amount of items completed in the progress review will correlate with the effectiveness of the process used, and as the process improves, the number of completed items will likely fluctuate around a peak efficiency.
+\end{description}
+
+
+%==============================================================================
+\section{Artifacts}
+%==============================================================================
+\begin{description}
+  \item[Project Backlog]
+    This backlog will contain all the stories for the project, as progress is made and more is made clear, stories will be added to this backlog, to be completed in future sprints.
+    
+  \item[Sprint backlog]
+    This backlog will contain all the stories to be completed during the current sprint. At the time of this document, it is limited to 10 stories per sprint, however this will change depending on the results of both the progress review and process review.
+    
+  \item[Kanban Board]
+    This is the board that all the stories will be held on. This could also be known as the information radiator. It is likely there will be both a manual version, made with string and sticky notes, and a digital version, so it is always accessible.
+    
+   \item[Progress/Process Review Documents]
+     These documents will be produced constantly throughout the project, providing a retrospective on how the process has changed and what progress has been made. These are going to be stored digitally, in the version control.
+
+\end{description}
+%
+% Start to comment out / remove the following lines. They are only provided for instruction for this example template.  You don't need the following section title, because it will be added as part of the bibliography section. 
+%
+%==============================================================================
+%\section*{Your Bibliography - REMOVE this title and text for final version}
+%==============================================================================
+%
+%You need to include an annotated bibliography. This should list all relevant web pages, books, journals etc. that you have consulted in researching your project. Each reference should include an annotation. 
+%
+%The purpose of the section is to undeirstand what sources you are looking at.  A correctly formatted list of items and annotations is sufficient. You might go further and make use of bibliographic tools, e.g. BibTeX in a LaTeX document, could be used to provide citations, for example \cite{NumericalRecipes} \cite{MarksPaper} \cite[99-101]{FailBlog} \cite{kittenpic_ref}.  The bibliographic tools are not a requirement, but you are welcome to use them.   
+%
+%You can remove the above {\em Your Bibliography} section heading because it will be added in by the renewcommand which is part of the bibliography. The correct annotated bibliography information is provided below. 
+%
+% End of comment out / remove the lines. They are only provided for instruction for this example template. 
+
+
+\nocite{*} % include everything from the bibliography, irrespective of whether it has been referenced.
+
+% the following line is included so that the bibliography is also shown in the table of contents. There is the possibility that this is added to the previous page for the bibliography. To address this, a newline is added so that it appears on the first page for the bibliography. 
+%\newpage
+\addcontentsline{toc}{section}{Initial Annotated Bibliography} 
+
+%
+% example of including an annotated bibliography. The current style is an author date one. If you want to change, comment out the line and uncomment the subsequent line. You should also modify the packages included at the top (see the notes earlier in the file) and then trash your aux files and re-run. 
+%\bibliographystyle{authordate2annot}
+\bibliographystyle{IEEEannot}
+\renewcommand{\refname}{Annotated Bibliography}  % if you put text into the final {} on this line, you will get an extra title, e.g. References. This isn't necessary for the outline project specification. 
+\bibliography{mmp.bib} % References file
+
+\end{document}

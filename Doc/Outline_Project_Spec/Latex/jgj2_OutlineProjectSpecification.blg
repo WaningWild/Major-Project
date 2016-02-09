@@ -1,0 +1,60 @@
+This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: MMP_OutlineProjectSpecification.aux
+The style file: IEEEannot.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: mmp.bib.bib
+-- IEEEtranS.bst version 1.11 (2003/04/02) by Michael Shell.
+-- http://www.ctan.org/tex-archive/macros/latex/contrib/supported/IEEEtran/
+-- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+** Sorting version - not for use with work to be submitted to the IEEE.
+Warning--to sort, need author, organization, or key in DroneAPI
+Warning--to sort, need author, organization, or key in DroneQuickStart
+
+Done.
+You've used 3 entries,
+            4538 wiz_defined-function locations,
+            906 strings with 8624 characters,
+and the built_in function-call counts, 1386 in all, are:
+= -- 112
+> -- 16
+< -- 0
++ -- 8
+- -- 4
+* -- 71
+:= -- 228
+add.period$ -- 6
+call.type$ -- 3
+change.case$ -- 14
+chr.to.int$ -- 0
+cite$ -- 5
+duplicate$ -- 104
+empty$ -- 126
+format.name$ -- 5
+if$ -- 283
+int.to.chr$ -- 0
+int.to.str$ -- 3
+missing$ -- 23
+newline$ -- 32
+num.names$ -- 2
+pop$ -- 81
+preamble$ -- 1
+purify$ -- 8
+quote$ -- 2
+skip$ -- 92
+stack$ -- 0
+substring$ -- 24
+swap$ -- 51
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 6
+type$ -- 24
+warning$ -- 2
+while$ -- 2
+width$ -- 4
+write$ -- 44
+(There were 2 warnings)
