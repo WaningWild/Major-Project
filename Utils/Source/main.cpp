@@ -5,6 +5,7 @@ using namespace std;
 //Function Definitions
 int genProc();
 int genProg();
+int genGen();
 
 std::string filenameDate(struct tm *local) {
   char buffer[80];
@@ -28,7 +29,8 @@ void drawMenu() {
   cout << "||                                                   ||" <<endl;
   cout << "|| 1) Generate Process Log                           ||" <<endl;
   cout << "|| 2) Generate Progress Log                          ||" <<endl;
-  cout << "|| 3) Exit                                           ||" <<endl;
+  cout << "|| 3) Generate Genereal Log                          ||" <<endl;
+  cout << "|| 4) Exit                                           ||" <<endl;
   cout << "||___________________________________________________||" <<endl;
 }
 
@@ -58,8 +60,11 @@ int main() {
         genProg();
         break;
       case 3:
-        return 0;
+        cout << "Generating general log..." <<endl;
+        genGen();
         break;
+      case 4:
+        return 0;
       default:
         cout << "Please try again"<<endl; 
     }
