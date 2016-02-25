@@ -1,3 +1,12 @@
 General log for 22/02/2016
 
+  ~ Started first sprint today.
+    This sprint should consist of getting started in the process and making a start on development.
 
+  ~Stories in progress:
+    - Populate project backlog
+    - Prototype control module
+    - Reading in computer vision
+      -Specifically optical flow
+      -Myra mentioned a bee based optical flow paper, which I'll need to find. (Optical Flow based robot obstacle avoidance??)
+    - 
