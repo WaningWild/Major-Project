@@ -2,21 +2,21 @@ Process Log for 22/02/2016
 
 What went well:
   - The kanban board and producing a project backlog is helping give an idea of scope for the project. 
-  - 
+  - Populating my project backlog proved difficult to include stories of an appropriate size. However, introducing "Epics", to be broken down later has made this process much easier. These epics will be broken down later, closer to the time they will be needed.
   - 
   - 
   - 
 What could be improved:
   - I feel my sprints may be too long, a mid-sprint meeting may not be necessary and I should always be able to contact my supervisor via email/visiting her office should a problem arise. 
  
-  - The sprint backlog limit seems a little high going into my first sprint, this may be due to the nature of the work for this sprint however.  
+  - The sprint backlog limit seems a little high going into my first sprint, this may be due to the nature of the work for this sprint however. || This is certainly true after 3 days into this sprint, the stories are too large to be completed at this rate. (25/02/2016)
  
   - It also seems like the WIP limit is too high, even at 4, at the beginning of this sprint. It's possible I over estimated my ability to get things done comfortably, this and the backlog limit will be reduced next week.
   - 
   - 
 How improvements can be made:
   - Reduce sprints down to a single week
-  - Reduce backlog limit to 7 next sprint
+  - Reduce backlog limit to 6 next sprint
   - Reduce WIP limit to 3 next sprint
   - 
   - 
