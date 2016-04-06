@@ -1,0 +1,60 @@
+#include "ardrone/ardrone.h"
+
+int main(int argc, char *argv[]) {
+
+  std::cout << "Starting flight..." <<std::endl;
+  ARDrone ardrone;
+  std::cout << "Battery: " << ardrone.getBatteryPercentage() << "[%]" <<std::endl;
+  if (!ardrone.open()) {
+    std::cout << "Failed to start AR Drone" <<  std::endl;
+    return -1;
+  }
+  //Get and show image from camera(Not sure which by default).
+  cv::Mat image = ardrone.getImage();
+  cv::imshow("Camera", image);
+
+  //If the drone isn't flying, take off. Otherwise, land.
+  if (ardrone.onGround()) {
+    ardrone.takeoff();
+  } else { ardrone.landing();}
+  
+  //Hover and wait for 3 seconds.
+  double vx = 0.0, vy = 0.0, vz =0.0, vr = 0.0;
+  ardrone.move3D(vx, vy, vz, vr);
+  sleep(30);
+  if (!ardrone.onGround()) {
+    ardrone.landing();
+  }
+  return 0;
+}
+
+/*void cameraWork(ARDrone ard) {
+  while(1) {
+    cv::Mat image = ard.getImage();
+
+    cv::Mat prev_gray, new_gray;
+    cv::cvtColor(image, new_gray, cv::COLOR_BGR2GRAY);
+    cv::cvtColor(prev_image, prev_gray, cv::COLOR_BGR2GRAY);
+
+    int max_corners = 50;
+    std::vector<cv::Point2f> prev_corners;
+    std::vector<cv::Point2f> new_corners;
+    cv::goodFeaturesToTrack(prev_gray, prev_corners, max_corners, 0.1, 5.0);
+    cv::goodFeaturesToTrack(new_gray, new_corners, max_corners, 0.1, 0.5);
+
+    std::vector<unsigned char> status;
+    std::vector<float> errors;
+    cv::calcOpticalFlowPyrLK(prev_gray, new_gray, prev_corners, new_corners, status, errors);
+
+    image.copyTo(prev_image);
+    
+    for (size_t i = 0; i < status.size(); i++) {
+      cv::Point p0(ceil(prev_corners[i].x), ceil(prev_corners[i].y));
+      cv::Point p1(ceil(new_corners[i].x), ceil(new_corners[i].y));
+      cv::line(image, p0,p1,cv::Scalar(0,255,0), 2);
+    }
+
+    cv::imshow("Camera", image);
+  }
+*/
+//}

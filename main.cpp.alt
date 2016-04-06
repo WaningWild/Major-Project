@@ -1,0 +1,92 @@
+/****************************************************************************************
+ ****************************************************************************************
+ **  File: main.cpp									*
+ **  Author: Joseph James (jgj2@aber.ac.uk)						*
+ **  Purpose: This file gets the program up and running, creating necessary objects.	*
+ **											*
+ ****************************************************************************************
+ **  To-do:										*
+ **    - Decouple Vision from input							*
+ **    - Place vision in it's own module						*
+ **    - Place input in it's own module							*
+ **    - Create header files								*
+ ****************************************************************************************
+*/
+#include "main.hpp"
+
+void readTiles();
+
+int main(int argc, char* argv[]) 
+{
+  //static ARDrone ardrone;
+  setCamera(ardrone); //Open Webcam or Drone if connected.
+    
+  if (!ardrone.open() && !cap.isOpened()) {
+   std::cout << "Failed to open connection to AR.Drone or camera!" << std::endl;
+    return -1;
+  }
+  
+
+  //Check battery (BUGGED, check github for fix. is it??? seemed fixed??)
+  std::cout << "Battery percentage: " << ardrone.getBatteryPercentage() << "[%]" << std::endl;
+
+  //Create a window called "Video"
+  cv::namedWindow("Video", CV_WINDOW_AUTOSIZE);
+  
+  //Array of video sections  
+  cv::Mat tiles_prev[12], tiles_cur[12];
+  cv::Mat img_prev = getImage(ardrone);
+  cv::Mat img_cur;
+  cv::imshow("BEFORE VIS", img_prev);
+  //Show video feed.
+  while(1)
+  {
+     
+    img_cur = getImage(ardrone);
+    splitToTiles(img_prev, 4, 3, tiles_prev); splitToTiles(img_cur, 4, 3, tiles_cur);
+    
+    std::vector<cv::Point2f> features_prev[12], features_cur[12];   
+    
+    for (int c = 0; c < 12; c++) {
+      cv::cvtColor(tiles_cur[c], tiles_cur[c], cv::COLOR_BGR2GRAY);
+      cv::cvtColor(tiles_prev[c], tiles_prev[c], cv::COLOR_BGR2GRAY);
+
+      features_prev[c] = featureDetect(tiles_prev[c], 84);
+      features_cur[c] = featureDetect(tiles_cur[c], 84);
+      std::vector<unsigned char> status;
+      std::vector<float> errors;
+
+      cv::calcOpticalFlowPyrLK(tiles_prev[c], tiles_cur[c], features_prev[c], features_cur[c], status, errors); 
+      
+      for (size_t i = 0; i < status.size(); i++) {
+        cv::Point p0(std::ceil(features_prev[c][i].x), std::ceil(features_prev[c][i].y));
+	cv::Point p1(std::ceil(features_cur[c][i].x), std::ceil(features_cur[c][i].y));
+        cv::line(tiles_cur[c], p0, p1, cv::Scalar(0, 255, 0), 2);
+      }
+      
+    }
+
+    
+    imshow("Vid1", tiles_cur[0]);
+    imshow("Vid2", tiles_cur[1]);
+    imshow("Vid3", tiles_cur[2]);
+    imshow("Vid4", tiles_cur[3]);
+    imshow("Vid5", tiles_cur[4]);
+    imshow("Vid6", tiles_cur[5]);
+    imshow("Vid7", tiles_cur[6]);
+    imshow("Vid8", tiles_cur[7]);
+    imshow("Vid9", tiles_cur[8]);
+    imshow("Vid10", tiles_cur[9]);
+    imshow("Vid11", tiles_cur[10]);
+    imshow("Vid12", tiles_cur[11]);
+    
+
+    if (cv::waitKey(30) == 27) {std::cout<<"User exit" << std::endl; return 0;}
+    img_cur.copyTo(img_prev);
+    //img = ardrone.getImage();
+    //cout << img.rows << "     " << img.cols << endl;
+    cv::imshow("Video",img_cur);
+  }
+  return 0;
+}
+
