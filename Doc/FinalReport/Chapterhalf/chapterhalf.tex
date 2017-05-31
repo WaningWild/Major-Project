@@ -1,0 +1,227 @@
+\chapter{Development, sprint reviews and progress logs}
+
+%  Here, we go through each sprint
+%      the design decisions we made DURING that sprint
+%		How that propogated into decisions we'd previously made
+%		Implementation of these decisions and what went how we planned, what went wrong
+%       how we dealt with what went wrong and how it effected work
+%
+Throughout this section, the implementation and progress of the project will be shown sprint by sprint. Within each section, design decisions will be shown, explained and the effects of these decisions will be discussed. It should be noted that multiple sprints at the start of the process were focused on research and preliminary work understanding the technologies being used, these have been included although they don't necessarily contain technical work. Some weeks also included work on documentation such as the final report, these have been written down as "Report work" to make a clear distinction between story types.
+
+Another idea to note is that this project does not contain a large amount of different parts and it mostly consists of the 2 main components of drone control and vision. This means there aren't too many design decisions to be made, with no real sprawling overall designs to be had.
+\clearpage
+\section{Sprint 1 : Research and initial preliminary work}
+\subsection{Artefact status}
+\subsubsection{Sprint backlog (Limit 10 items)}
+\begin{description}
+	\item[Populate project backlog] \em{Completed}
+	\item[Read developers guide for Drone SDK] \em{Completed}
+	\item[Research source code of similar projects/Drone projects] \em{Completed}
+	\item[Read Paper]
+	\item[Install necessary software] \em{Completed}
+	\item[Find a paper recommended by supervisor]
+	\item[Drone: Prototype pre-planned flight paths] \em{Completed}
+	\item[Drone: Revise pre-planned flight paths to allow for variable flight paths]
+	\item[Drone/Vision: Implement input from drone camera]
+	\item[Report work] \em{Completed}
+\end{description}
+
+\subsection{Progress made within this sprint}
+This sprint introduced a lot of my background work, as well as being the sprint I found the CVDrone software \cite{CVDrone} while researching source code of similar projects. This was also the sprint that I installed CVDrone and OpenCV, as well as prototyping with the drone control in order to better understand the use of CVDrone.
+
+Reading the developers guide for the Drone SDK\cite{DroneDevGuide} ended up being less helpful than anticipated, as it was confusing and difficult to get to grips with. This then turned the source code research into research into other methods of controlling the drone, as there was a lack of projects with the current SDK to assist in understanding.
+
+Prototyping pre-planned paths was initially going to be part of the over-all project, however I felt it wasn't necessary to include. This led to this particular story being about getting to understand the software being used a little better.
+
+\subsection{Problems faced}
+Progress was severely slowed in this sprint due to installation issues with CVDrone which is built for a 32bit Linux system, while I was running at the time a 64bit system. In order to fix this incompatibility, a 32bit linux distro was placed on my machine however this came with it's own problems which prevented connection to the drone. These problems were solved by updating the kernel however finding the solution to the problem took longer than was hoped and therefore some stories were not completed within this sprint.
+
+\subsection{Sprint review}
+The sprint backlog limit for this sprint was considered too high to be able to deal with potential issues in stories, as well as the stories themselves seeming a little too large for this many to be completed in a single sprint. At this point, the sprint backlog has been moved down to 6 and the work in progress limit has been brought down to 3. The sprint length was also decreased down to a single week.
+
+\section{Sprint 2: Initial vision system + further research}
+\subsection{Artefact status}
+\subsubsection{Sprint backlog (Limit 6 items)}
+\begin{description}
+	\item[Implement input from Drone Camera] \em{Completed}
+	\item[Read paper] \em{Completed}
+	\item[Feature detection] \em{Completed}
+	\item[Feature tracking through frames] \em{Completed}
+	\item[Report Work] \em{Completed}
+	\item[Report Work] 
+\end{description}
+
+\subsection{Progress made within this sprint}
+This sprint introduced the first elements of structure to this project, introducing all the different function areas of the project in order to clearly delineate different areas of code. These are explained below and can be seen in the file structure of the project: 
+\begin{description}
+\item[InputHandling] Contains all the input handling (Drone camera/Webcam/Sensor information)
+\item[Vision] This section will be doing most of the vision oriented calculations, it will likely be the largest section of the project.
+\item[Drone controller] This will contain anything to do with controlling the drone(A PID Controller, the API for controlling the drone)
+\end{description}
+
+This decision however was made after feature detection was put in, causing a refactor to move all this out into it's own file. The decision to separate this code allows me to re-use this code in later projects as well as simplifying the main file to allow for more easy readability.
+
+Also implemented here was the input from the drone's camera, which was made more complicated by the decision to switch from singularly using the camera off the drone to having the project default to the default camera if the drone is not connected/available. This decision was made in order to be able to demo the code well even without the drone, it also adds to the robustness of the code, as if there isn't a drone connected, it won't just crash and burn, it'll just continue on whatever camera feed it can.
+
+Further progress made within this sprint was the implementation of feature detection and feature tracking through frames, although at the time the feature detection was not done by regular grid sampling as described in \cite{PhoneObstacleAvoidance} and at the time, I did not consider it dense enough. Initially when implementing the feature detection, I used the cv::goodFeaturesToTrack() function, which used harris corners to detect features. This didn't seem to provide enough features for my liking, but I stuck with it for this sprint, waiting to refactor when it was necessary rather than beforehand.
+
+\subsection{Problems faced}
+There were few problems with this sprint, as everything was pretty straight forward. An issue that did come up was an issue of pointers and references when passing my ARDrone object to allow for the switching between a regular camera and the drone camera. This was quickly solved however and the sprint was mostly successful.
+
+\subsection{Sprint review}
+With most of my tasks this sprint being completed, I wasn't sure whether the uncompleted tasks were due to a lack of work ethic this week or a problem with my methodology, so I left the sprint as it was in order to make sure before I made any changes.
+
+
+\section{Sprint 3: Regular grid sampling and Background/Foreground segmentation}
+\subsection{Artefact status}
+\subsubsection{Sprint Backlog (Limit 6 Items)}
+\begin{description}
+  \item[Implement regular grid sampling for feature detection] \em{Completed}
+  \item[Fully read paper] \em{Completed}
+  \item[Restructure code to allow for storage of custom interest points] \em{Completed}
+  \item[Research homographies] \em{Completed}
+  \item[Implement background/foreground segmentation]
+  \item[Report Work] \em{Completed}
+\end{description}
+\clearpage
+\subsection{Progress made within this sprint}
+Within this sprint, the regular grid sampling was introduced. This regular grid sampling consisted of splitting the input image into a certain number of tiles and then performing feature detection on these tiles. This was to spread the number of features equally across the image to provide features on the texture-less surfaces that are less likely to generate features.
+
+ While this did work and was implemented, it was later removed during the development in order to allow for other steps to be taken. For example, during homography calculations, with the tiled method, the homography was calculated for each tile rather than for the entire image. This caused the estimation values to be too small for features to be classified as foreground, which is not very useful. 
+
+Another issue this tiled method faced further on in development is that when a purely featureless tile came up(for example, the sky), if no features were found OpenCV would throw an exception when attempting to calculate optical flow. This was much less likely to happen without the tiled approach, so the tiled approach was removed.
+
+During the previous sprint, I also realised that the interest points I had were not being held in a manner that ensured the data I needed could be stored along with the feature points. The data I needed for interest points was the current feature of the interest point, the previous feature related to that interest point, the motion vector angle of that interest point and whether the feature was foreground or not. I decided to implement this as a struct type that is available to the entire program, as it's necessary for all parts of the implementation. This struct is shown in Appendix C.
+\subsection{Problems Faced}
+During this particular sprint, I faced the issue of an over-sized story. This story was the implementation of background/foreground segmentation. While this story might not have been too large for a person with experience, in my case this story introduced too many new concepts and overwhelmed the sprint. As a result, the story wasn't finished during this week and in fact took several sprints to get done.
+
+While I had done some research into homographies with Multiple View Geometry\cite{MultipleViewGeometry}, my lack of experience and understanding really slowed this stage down. At this point, I recognised my lack of experience being a limiting factor and reduced the sprint backlog limit and work in progress limit to reflect this.
+\clearpage
+\section{Sprint 4: Homography Generation, Point estimation and Classification}
+\subsection{Artefact status}
+\subsubsection{Sprint Backlog (Limit 4 Items)}
+\begin{description}
+  \item[Further research into homography generation using RANSAC] \em{Completed}
+  \item[Homography generation] \em{Completed}
+  \item[Point Estimation] \em{Completed}
+  \item[Point Classification] \em{Completed}
+\end{description}
+\subsection{Progress made within this sprint}
+This sprint brought forward a lot of progress, with the full implementation of the background/camera motion segmentation. I also researched further into the generation of homographies using RANSAC, however this was unnecessary as OpenCV did provide a function to allow me to generate homographies using RANSAC.
+
+The paper I read on generating homographies was \cite{fuzzyRANSAC}. This paper talks about generating homographies by using a method called "Fuzzy RANSAC", which uses fuzzy logic to classify the data sets being used for random sample consensus as "Good","Bad" or "Vague" and improves the robustness of the algorithm by only sampling from the "Good" data sets. While the OpenCV method provided may not be the exact same method, it would have been out of the scope of the project to implement my own fuzzy RANSAC method, and the scope of this project is pretty large already.
+
+\subsection{Problems Faced}
+This sprint brought to attention the previously discussed tiling problems implemented in an earlier sprint. In order to combat this, I added removal of tiling to the next sprint as well as attempting to find a feature detector that was more suited to my needs. This would be a dense feature detector that implements grid sampling in order to detect features in all regions of the image.
+\clearpage
+\section{Sprint 5: Removal of Tiling and the new feature detector}
+\subsection{Artefact status}
+\subsubsection{Sprint Backlog (Limit 4 Items)}
+\begin{description}
+  \item[Remove tiling and replace it with the single image feed] \em{Completed}
+  \item[Research other feature detection techniques supplied by OpenCV] \em{Completed}
+  \item[Replace current feature detector with Dense Feature detection] \em{Completed}
+  \item[Research next step] \em{Completed}
+\end{description}
+\subsection{Progress made within this sprint}
+In order to remove tiling, I refactored my main function into a single "performAlgorithm" function with all tiling removed. As a result, the "performAlgorithm" function has remained as an artifact of this change. While this is an extra function call that need not be done, a single extra call on the call stack is unlikely to effect performance in a program of this size.
+
+The feature detection was also changed in this sprint, implementing a denser feature detector that uses the "FAST" method to detect features, which is suited towards real-time computer vision. 
+
+Within my research for my next step, I realised I would need agglomerative hierarchical clustering for my next step. This prompted the search for a library 
+
+\subsection{Problems Faced}
+There were very few problems during this sprint, as my feature detection is set up so that I only need to change the inner workings of the "featureDetect()" function.
+
+There were also very few problems removing the tiling, as all it meant was changing the current tile to 0 and not iterating through tiles. While I did eventually remove most of this, some of it still lingers around in the code although it serves no purpose anymore. 
+\clearpage
+\section{Sprint 6: The search for the elusive data analysis library}
+\subsection{Artefact status}
+\subsubsection{Sprint Backlog (Limit 4 Items)}
+\begin{description}
+  \item[Research data analysis libraries for C++] \em{Completed}
+  \item[Integrate the chosen library] 
+  \item[Implement agglomerative hierarchical clustering with said library]
+  \item[Report work] \em{Completed}
+\end{description}
+\subsection{Progress made within this sprint}
+During this sprint, I intended to implement agglomerative hierarchical clustering with the use of an external library. To do this, I initially searched for a separate library and came up with the ALGLIB library \cite{ALGLIB}. However, this didn't work out, as I'd have had to convert my data types and this turned out be a major hassle. It involved switching from my custom data structure to cv::Point2f, then from cv::Point2f to ALGLIB's own real\_2d\_array. I couldn't quite get my head around this conversion from Point2f to real\_2d\_array, and I may have even had to convert to cv::Mat before converting to real\_2d\_array. At this point, it was more than a hassle to implement this and I decided against it.
+
+After this, my search turned me towards OpenCV, where I found some clustering techniques, however they weren't quite what I needed and ended up requiring more data conversions and confusing implementations.
+
+Ultimately, I ended up deciding to implement a bare bones clustering technique based on this section from the paper \cite{PhoneObstacleAvoidance}:
+
+ "Phase 1 - The motion vectors are sorted in descending order based on the number of occurences of the corresponding motion vector angle. For the first interest point of the current list a new cluster is formed, having as a centroid, the motion vector angular value.
+ 
+ Phase 2 - For all the other interest points not assigned to any motion class, we compute the angular deviation from the centroid. If the angular deviation is beyond a predefined threshold and the motion magnitude is equal with the cluster centroid then the current point will be grouped into the cluster. Otherwise, a new motion cluster is created. For the remaining outliers, the process is applied recursively until all points belong to a motion class."
+ 
+ My interpretation of this, while probably wrong, was to loop through all 
+
+
+\subsection{Problems Faced}
+Obviously, my major issue here was not being able to find a library that was compatible with OpenCV data types (I may have been overly hopeful), 
+\section{Sprint 7: Building the agglomerative clusterer}
+\subsection{Artefact status}
+\subsubsection{Sprint Backlog (Limit 4 Items)}
+\begin{description}
+  \item[Sort our interest points]
+  \item[Implement the algorithm described in the paper]
+  \item[K nearest neighbours research for point refinement]
+  \item[Report work]
+\end{description}
+\subsection{Progress made within this sprint}
+This sprint had several set backs, starting with our sorting story. During the development of this story, my inexperience with C-like languages dealing with references and pointers slowed me down. This inexperience led to segmentation faults that took quite a while to solve due to the recursive nature of the sort although eventually this did get sorted out.
+
+Implementing the algorithm described in the paper was easier than expected, although it's likely a simplified version of what was intended in the paper. My version can be found in Appendix 3, but it does have some significant changes. In the paper, phase 2 states :
+
+ "If the angular deviation is beyond a predefined threshold and the motion magnitude is equal with the cluster centroid then the current point will be grouped into the cluster"
+ 
+ This is something that confused me about the paper, stating that if the angular deviation (The difference between the two angles) is larger than a certain threshold that they should be classified as belonging to the same cluster. Intuitively this doesn't sound right, so I tested it both ways and it turns out when I use what is stated exactly almost no clusters ever get formed, with each point tending to stay within it's own cluster. Once I removed the motion vector magnitude is equal and reversed the above statement, clusters started to form. I believe this might be an error in my magnitude calculations or my vector angle calculations or even in the clusterer itself but no matter what I could not figure out what was going wrong here.
+ 
+ However, in noisy areas of the images, the points seem to be assigning to what look to be essentially random clusters, with each point popping up as a different colour all the time. I couldn't find the proper solution to this issue, but when objects are moving, all the moving points tend towards being part of the same cluster which is the solution we're looking for.
+\clearpage
+\section{Sprint 8: The final leg}
+\subsection{Artefact status}
+\subsubsection{Sprint Backlog (Limit 4 Items)}
+
+\begin{description}
+  \item[Implement refine points function]
+  \item[Implement Drone control]
+\end{description}
+\subsection{Progress made within this sprint}
+At this point in the process, it's very clear that this project is not going to be fully technically completed. This issue will be discussed in the critical evaluation.
+
+OpenCV includes a K nearest neighbours algorithm, however the documentation of this functionality is sparse and what little I could find had no corresponding parts in the paper I was implementing.
+
+The OpenCV implementation requires training on training data, which I lack for this project and the paper sheds no light on what training data was used for their K Nearest Neighbours. So to deal with this, I implemented a Euclidean distance function that found the euclidean distance between a point and all other points within that points cluster. If the point had more than half of the points in the cluster with a euclidean distance over a certain threshold, it was removed from the cluster.
+ 
+\subsection{Problems Faced}
+
+After experimenting with K nearest neighbours, I came to the conclusion that I wouldn't use K-Nearest Neighbours and would instead use a simpler euclidean distance calculation for the nearest X number of points. This would hopefully give me a similar result to K nearest neighbours, without the hassle of introducing training data and other things that are not explained within the confines of the paper and of which I don't have enough experience within the field to know the answers.
+
+The issue of experimentation with K nearest neighbours then left little time to do anything else with drone control, so what has been implemented here is drone control with the keyboard, the vision system has no input on the control of the drone at all at this point and does not allow for autonomous avoidance of obstacles.
+%You should concentrate on the more important aspects of the design. It is essential that an overview is presented before going into detail. As well as describing the design adopted it must also explain what other designs were considered and why they were rejected.
+
+
+%The design should describe what you expected to do, and might also explain areas that you had to revise after some investigation.
+
+%Typically, for an object-oriented design, the discussion will focus on the choice of objects and classes and the allocation of methods to classes. The use made of reusable components should be described and their source referenced. Particularly important decisions concerning data structures usually affect the architecture of a system and so should be described here.
+
+%How much material you include on detailed design and implementation will depend very much on the nature of the project. It should not be padded out. Think about the significant aspects of your system. For example, describe the design of the user interface if it is a critical aspect of your system, or provide detail about methods and data structures that are not trivial. Do not spend time on long lists of trivial items and repetitive descriptions. If in doubt about what is appropriate, speak to your supervisor.
+
+%You should also identify any support tools that you used. You should discuss your choice of implementation tools - programming language, compilers, database management system, program development environment, etc.
+
+%Some example sub-sections may be as follows, but the specific sections are for you to define. 
+%
+% Overall architecture
+%  detailed design
+%  more detail
+%  user interface
+%  other relevant stuff
+%
+
+%The implementation should look at any issues you encountered as you tried to implement your design. During the work, you might have found that elements of your design were unnecessary or overly complex; perhaps third party libraries were available that simplified some of the functions that you intended to implement. If things were easier in some areas, then how did you adapt your project to take account of your findings?
+
+%It is more likely that things were more complex than you first thought. In particular, were there any problems or difficulties that you found during implementation that you had to address? Did such problems simply delay you or were they more significant? 
+
+%You can conclude this section by reviewing the end of the implementation stage against the planned requirements. 

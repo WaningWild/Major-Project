@@ -1,0 +1,6 @@
+0\thispagestyle{empty}
+
+\begin{center}
+    {\LARGE\bf Abstract}
+\end{center}
+This project aims to implement vision based autonomous object avoidance within a monocular quad-copter in order to provide autonomous assistance to those hard of sight. Using Harris Corners  I detect features, then track these features using Lucas-Kanade optical flow. These interest points are then used to predict background motion/camera motion via a RANSAC generated homography. After this, the outlying interest points are clustered together based on their motion vectors/motion vector angles using an agglomerative hierarchical clustering technique. These clusters are then refined using k-Nearest Neighbours, after which the clusters are ensured to be consistent throughout the video feed. Each cluster is then used as an object and it is determined whether or not it is a risk to be avoided, if it is it's position is used to allow the drone to avoid the object.

@@ -1,0 +1,77 @@
+\contentsline {chapter}{\numberline {1}Background \& Objectives}{1}
+\contentsline {section}{\numberline {1.1}Background \& Analysis}{1}
+\contentsline {subsection}{\numberline {1.1.1}Drone capabilities}{1}
+\contentsline {subsubsection}{\numberline {1.1.1.1}Cameras}{1}
+\contentsline {subsubsection}{\numberline {1.1.1.2}Processor + RAM}{1}
+\contentsline {subsubsection}{\numberline {1.1.1.3}Connectivity}{2}
+\contentsline {subsubsection}{\numberline {1.1.1.4}Other sensors}{2}
+\contentsline {subsection}{\numberline {1.1.2}Drone control}{2}
+\contentsline {subsubsection}{\numberline {1.1.2.1}AR Drone SDK}{3}
+\contentsline {subsubsection}{\numberline {1.1.2.2}Node Copter}{3}
+\contentsline {subsubsection}{\numberline {1.1.2.3}Robot Operating System Driver}{3}
+\contentsline {subsubsection}{\numberline {1.1.2.4}CVDrone}{3}
+\contentsline {subsection}{\numberline {1.1.3}Vision}{3}
+\contentsline {subsubsection}{\numberline {1.1.3.1}Monocular vision}{4}
+\contentsline {subsubsection}{\numberline {1.1.3.2}Monocular obstacle avoidance}{4}
+\contentsline {subsubsection}{\numberline {1.1.3.3}Further reading}{5}
+\contentsline {subsubsection}{\numberline {1.1.3.4}OpenCV}{6}
+\contentsline {subsection}{\numberline {1.1.4}Tasks to be undertaken and where they came from}{6}
+\contentsline {subsubsection}{\numberline {1.1.4.1}Vision}{6}
+\contentsline {subsubsection}{\numberline {1.1.4.2}Drone control}{7}
+\contentsline {section}{\numberline {1.2}Process}{8}
+\contentsline {subsection}{\numberline {1.2.1}Initial methodology and artefacts}{8}
+\contentsline {subsubsection}{\numberline {1.2.1.1}Artefacts}{9}
+\contentsline {subsection}{\numberline {1.2.2}Changes made to the process}{9}
+\contentsline {chapter}{\numberline {2}Development, sprint reviews and progress logs}{11}
+\contentsline {section}{\numberline {2.1}Sprint 1 : Research and initial preliminary work}{12}
+\contentsline {subsection}{\numberline {2.1.1}Artefact status}{12}
+\contentsline {subsubsection}{\numberline {2.1.1.1}Sprint backlog (Limit 10 items)}{12}
+\contentsline {subsection}{\numberline {2.1.2}Progress made within this sprint}{12}
+\contentsline {subsection}{\numberline {2.1.3}Problems faced}{12}
+\contentsline {subsection}{\numberline {2.1.4}Sprint review}{13}
+\contentsline {section}{\numberline {2.2}Sprint 2: Initial vision system + further research}{13}
+\contentsline {subsection}{\numberline {2.2.1}Artefact status}{13}
+\contentsline {subsubsection}{\numberline {2.2.1.1}Sprint backlog (Limit 6 items)}{13}
+\contentsline {subsection}{\numberline {2.2.2}Progress made within this sprint}{13}
+\contentsline {subsection}{\numberline {2.2.3}Problems faced}{14}
+\contentsline {subsection}{\numberline {2.2.4}Sprint review}{14}
+\contentsline {section}{\numberline {2.3}Sprint 3: Regular grid sampling and Background/Foreground segmentation}{14}
+\contentsline {subsection}{\numberline {2.3.1}Artefact status}{14}
+\contentsline {subsubsection}{\numberline {2.3.1.1}Sprint Backlog (Limit 6 Items)}{14}
+\contentsline {subsection}{\numberline {2.3.2}Progress made within this sprint}{15}
+\contentsline {subsection}{\numberline {2.3.3}Problems Faced}{15}
+\contentsline {section}{\numberline {2.4}Sprint 4: Homography Generation, Point estimation and Classification}{16}
+\contentsline {subsection}{\numberline {2.4.1}Artefact status}{16}
+\contentsline {subsubsection}{\numberline {2.4.1.1}Sprint Backlog (Limit 4 Items)}{16}
+\contentsline {subsection}{\numberline {2.4.2}Progress made within this sprint}{16}
+\contentsline {subsection}{\numberline {2.4.3}Problems Faced}{16}
+\contentsline {section}{\numberline {2.5}Sprint 5: Removal of Tiling and the new feature detector}{17}
+\contentsline {subsection}{\numberline {2.5.1}Artefact status}{17}
+\contentsline {subsubsection}{\numberline {2.5.1.1}Sprint Backlog (Limit 4 Items)}{17}
+\contentsline {subsection}{\numberline {2.5.2}Progress made within this sprint}{17}
+\contentsline {subsection}{\numberline {2.5.3}Problems Faced}{17}
+\contentsline {section}{\numberline {2.6}Sprint 6: The search for the elusive data analysis library}{18}
+\contentsline {subsection}{\numberline {2.6.1}Artefact status}{18}
+\contentsline {subsubsection}{\numberline {2.6.1.1}Sprint Backlog (Limit 4 Items)}{18}
+\contentsline {subsection}{\numberline {2.6.2}Progress made within this sprint}{18}
+\contentsline {subsection}{\numberline {2.6.3}Problems Faced}{18}
+\contentsline {section}{\numberline {2.7}Sprint 7: Building the agglomerative clusterer}{19}
+\contentsline {subsection}{\numberline {2.7.1}Artefact status}{19}
+\contentsline {subsubsection}{\numberline {2.7.1.1}Sprint Backlog (Limit 4 Items)}{19}
+\contentsline {subsection}{\numberline {2.7.2}Progress made within this sprint}{19}
+\contentsline {section}{\numberline {2.8}Sprint 8: The final leg}{20}
+\contentsline {subsection}{\numberline {2.8.1}Artefact status}{20}
+\contentsline {subsubsection}{\numberline {2.8.1.1}Sprint Backlog (Limit 4 Items)}{20}
+\contentsline {subsection}{\numberline {2.8.2}Progress made within this sprint}{20}
+\contentsline {subsection}{\numberline {2.8.3}Problems Faced}{20}
+\contentsline {chapter}{\numberline {3}Evaluation}{21}
+\contentsline {section}{\numberline {3.1}Process}{21}
+\contentsline {section}{\numberline {3.2}Design decisions}{22}
+\contentsline {section}{\numberline {3.3}End result}{22}
+\contentsline {chapter}{Appendices}{23}
+\contentsline {chapter}{\numberline {A}Third-Party Code and Libraries}{24}
+\contentsline {chapter}{\numberline {B}Ethics Submission}{25}
+\contentsline {chapter}{\numberline {C}Code Examples}{28}
+\contentsline {section}{\numberline {3.1}Interest Point struct}{28}
+\contentsline {section}{\numberline {3.2}Clustering}{28}
+\contentsline {chapter}{Annotated Bibliography}{30}

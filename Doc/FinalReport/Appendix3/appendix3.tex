@@ -1,0 +1,56 @@
+\chapter{Code Examples}
+
+\section{Interest Point struct}
+
+The interest point data structure. Made to hold any and all information needed for each interest point.
+
+\begin{verbatim}
+ struct interestPoint {
+   cv::Point2f currentFeature;
+   cv::Point2f previousFeature;
+   double MotionVectorAngle;
+   bool isForeground;
+   int clusterLabel;
+ };
+\end{verbatim}
+
+\section{Clustering}
+This is the clustering function I used for clustering my points.
+
+\begin{verbatim}
+/****************************************************************
+ ****************************************************************
+ ** Function: clusterPoints()                                   *
+ ** Purpose : This function will perform the basics to start    *
+ **             clustering the points.
+ ** Params  : 							                        *
+ ** Returns : 							                     	*
+ ****************************************************************
+*/
+std::vector<cluster> clusterPoints(std::vector<interestPoint> *interestPoints, int splitLevel) {
+
+  ///Sort the features in descending order based on number of occurences of corresponding motion vector angle
+  mergeSort(*interestPoints);
+
+  std::vector<cluster> allClusters;
+  cluster current_cluster;
+  current_cluster.centroid = interestPoints->at(0);
+  current_cluster.label = 0;
+
+  for (size_t i = 0; i < interestPoints->size(); i++) {
+    if (std::abs(interestPoints->at(i).MotionVectorAngle - current_cluster.centroid.MotionVectorAngle) < angleThreshold) {
+      current_cluster.interestPoints.push_back(interestPoints->at(i));
+    }
+    else {
+      allClusters.push_back(current_cluster);
+      current_cluster.centroid = interestPoints->at(i);
+      current_cluster.interestPoints.clear();
+      current_cluster.interestPoints.push_back(interestPoints->at(i));
+      current_cluster.label = current_cluster.label + 1;
+    }
+  }
+
+  return allClusters;
+
+}
+\end{verbatim}

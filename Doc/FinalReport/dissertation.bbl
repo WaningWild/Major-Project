@@ -1,0 +1,248 @@
+\begin{thebibliography}{10}
+\providecommand{\url}[1]{#1}
+\csname url@rmstyle\endcsname
+\providecommand{\newblock}{\relax}
+\providecommand{\bibinfo}[2]{#2}
+\providecommand\BIBentrySTDinterwordspacing{\spaceskip=0pt\relax}
+\providecommand\BIBentryALTinterwordstretchfactor{4}
+\providecommand\BIBentryALTinterwordspacing{\spaceskip=\fontdimen2\font plus
+\BIBentryALTinterwordstretchfactor\fontdimen3\font minus
+  \fontdimen4\font\relax}
+\providecommand\BIBforeignlanguage[2]{{%
+\expandafter\ifx\csname l@#1\endcsname\relax
+\typeout{** WARNING: IEEEtran.bst: No hyphenation pattern has been}%
+\typeout{** loaded for the language `#1'. Using the pattern for}%
+\typeout{** the default language instead.}%
+\else
+\language=\csname l@#1\endcsname
+\fi
+#2}}
+
+\bibitem{DroneAPI}
+``{Parrot for Developers},'' \\url{http://developer.parrot.com/}, accessed
+  February 2016.
+ \begin{quotation}\noindent A starting page for developers, allowing access to
+  the SDK for the parrot drones. \end{quotation}
+
+\bibitem{DroneQuickStart}
+``{User guides for Ar.Drone 2.0},'' \\url{http://ardrone2.parrot.com/support/},
+  accessed February 2016.
+ \begin{quotation}\noindent The user guides for the drone, with safety
+  guidelines in the quick start manual. \end{quotation}
+
+\bibitem{Nstandard}
+\BIBentryALTinterwordspacing
+``{IEEE Standard for Information technology-- Local and metropolitan area
+  networks-- Specific requirements-- Part 11: Wireless LAN Medium Access
+  Control (MAC)and Physical Layer (PHY) Specifications Amendment 5:
+  Enhancements for Higher Throughput},'' Tech. Rep., Oct. 2009. [Online].
+  Available: \url{http://dx.doi.org/10.1109/ieeestd.2009.5307322}
+\BIBentrySTDinterwordspacing
+ \begin{quotation}\noindent The IEEE standard for Wi-Fi 802.11. \end{quotation}
+
+\bibitem{citeulike:13938185}
+\BIBentryALTinterwordspacing
+G.~Baratoff, C.~Toepfer, M.~Wende, and H.~Neumann, ``{Real-time navigation and
+  obstacle avoidance from optical flow on a space-variant map},'' in
+  \emph{Intelligent Control (ISIC), 1998. Held jointly with IEEE International
+  Symposium on Computational Intelligence in Robotics and Automation (CIRA),
+  Intelligent Systems and Semiotics (ISAS), Proceedings}.\hskip 1em plus 0.5em
+  minus 0.4em\relax IEEE, Sept. 1998, pp. 289--294. [Online]. Available:
+  \url{http://dx.doi.org/10.1109/isic.1998.713676}
+\BIBentrySTDinterwordspacing
+ \begin{quotation}\noindent A robotics system using optical flow as a method of
+  avoiding obstacles. \end{quotation}
+
+\bibitem{PersonalKanban}
+J.~Benson and T.~D. Barry, ``{Personal Kanban},''
+  \\url{http://www.personalkanban.com/}, accessed February 2016.
+ \begin{quotation}\noindent This site provides an explanation and guide for
+  "Personal Kanban", which is a kanban system for personal work flows.
+  \end{quotation}
+
+\bibitem{opticalFlowBirds}
+\BIBentryALTinterwordspacing
+P.~S. Bhagavatula, C.~Claudianos, M.~R. Ibbotson, and M.~V. Srinivasan,
+  ``{Optic Flow Cues Guide Flight in Birds},'' \emph{Current Biology}, vol.~21,
+  no.~21, pp. 1794--1799, Nov. 2011. [Online]. Available:
+  \url{http://dx.doi.org/10.1016/j.cub.2011.09.009}
+\BIBentrySTDinterwordspacing
+ \begin{quotation}\noindent A paper showing how birds regulate their flight and
+  avoid collisions in corridors using optical flow. \end{quotation}
+
+\bibitem{ALGLIB}
+\BIBentryALTinterwordspacing
+S.~Bochkanov, ``Alglib.'' [Online]. Available: \url{www.alglib.net}
+\BIBentrySTDinterwordspacing
+ \begin{quotation}\noindent ALGLIB is a cross-platform numerical analysis and
+  data processing library. I intended to use this for data analysis.
+  \end{quotation}
+
+\bibitem{opencv_library}
+G.~Bradski, ``{The OpenCV Library},'' \emph{Dr. Dobb's Journal of Software
+  Tools}, 2000.
+ \begin{quotation}\noindent An open source computer vision library, providing
+  access to vision algorithms, data types and GUI elements that are necessary
+  for computer vision. \end{quotation}
+
+\bibitem{3DMapOpFlowMono}
+\BIBentryALTinterwordspacing
+Y.~Diskin and V.~K. Asari, ``{Dense 3D point-cloud model using optical flow for
+  a monocular reconstruction system},'' in \emph{Applied Imagery Pattern
+  Recognition Workshop (AIPR): Sensing for Control and Augmentation, 2013
+  IEEE}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, Oct. 2013, pp. 1--6.
+  [Online]. Available: \url{http://dx.doi.org/10.1109/aipr.2013.6749315}
+\BIBentrySTDinterwordspacing
+ \begin{quotation}\noindent A method of 3D reconstruction using a single
+  camera. \end{quotation}
+
+\bibitem{GNULGPL}
+\BIBentryALTinterwordspacing
+G.~P. F.~S. Foundation, ``{GNU Lesser General Public License v3.0}.'' [Online].
+  Available: \url{https://www.gnu.org/copyleft/lesser.html}
+\BIBentrySTDinterwordspacing
+
+
+\bibitem{nodecop}
+\BIBentryALTinterwordspacing
+F.~Geisend\"{o}rfer, R.~Mehner, T.~Ball, T.~Kosch\"{u}tzki, A.~Nesbitt,
+  M.~Besser, and K.~Buca, ``{The NodeCopter - Programming flying robots with
+  node.js}.'' [Online]. Available: \url{http://www.nodecopter.com/}
+\BIBentrySTDinterwordspacing
+ \begin{quotation}\noindent Method of accessing and controlling the AR Drone
+  2.0 through javascript \end{quotation}
+
+\bibitem{ROSDrone}
+\BIBentryALTinterwordspacing
+M.~Hamer, J.~Engel, and S.~Parekh, ``{ardrone\_autonomy - ROS driver for Parrot
+  AR-Drone 1.0 and 2.0 quadrocopters}.'' [Online]. Available:
+  \url{http://wiki.ros.org/ardrone\_autonomy}
+\BIBentrySTDinterwordspacing
+ \begin{quotation}\noindent A potential method to control the drone.
+  \end{quotation}
+
+\bibitem{MultipleViewGeometry}
+\BIBentryALTinterwordspacing
+R.~Hartley and A.~Zisserman, \emph{{Multiple View Geometry in Computer
+  Vision}}, 2nd~ed.\hskip 1em plus 0.5em minus 0.4em\relax Cambridge University
+  Press, Apr. 2004. [Online]. Available:
+  \url{http://www.worldcat.org/isbn/0521540518} 9780521540513.
+\BIBentrySTDinterwordspacing
+ \begin{quotation}\noindent A book describing how to reconstruct scenes from
+  images using geometry and algebra, with applications to computer vision. The
+  particular section that is relevant to the project would be Part 0, section
+  4. \end{quotation}
+
+\bibitem{citeulike:7356573}
+\BIBentryALTinterwordspacing
+D.~Heeger, ``{Optical flow using spatiotemporal filters},'' \emph{International
+  Journal of Computer Vision}, vol.~1, no.~4, pp. 279--302, Jan. 1988.
+  [Online]. Available: \url{http://dx.doi.org/10.1007/bf00133568}
+\BIBentrySTDinterwordspacing
+ \begin{quotation}\noindent A method of estimating image velocity using
+  spatiotemporal filters, used to determine optical flow of an image.
+  \end{quotation}
+
+\bibitem{fuzzyRANSAC}
+\BIBentryALTinterwordspacing
+J.~Lee and G.~Kim, ``{Robust Estimation of Camera Homography Using Fuzzy
+  RANSAC},'' in \emph{Computational Science and Its Applications – ICCSA
+  2007}, ser. Lecture Notes in Computer Science, O.~Gervasi and M.~Gavrilova,
+  Eds.\hskip 1em plus 0.5em minus 0.4em\relax Springer Berlin Heidelberg, 2007,
+  vol. 4705, pp. 992--1002. [Online]. Available:
+  \url{http://dx.doi.org/10.1007/978-3-540-74472-6\_81}
+\BIBentrySTDinterwordspacing
+ \begin{quotation}\noindent This is a method of performing RANSAC using fuzzy
+  logic to calculate a homography matrix. \end{quotation}
+
+\bibitem{Lucas_KanadeOF}
+\BIBentryALTinterwordspacing
+B.~D. Lucas and T.~Kanade, ``{An Iterative Image Registration Technique with an
+  Application to Stereo Vision},'' in \emph{Proceedings of the 7th
+  International Joint Conference on Artificial Intelligence - Volume 2}, ser.
+  IJCAI'81.\hskip 1em plus 0.5em minus 0.4em\relax San Francisco, CA, USA:
+  Morgan Kaufmann Publishers Inc., 1981, pp. 674--679. [Online]. Available:
+  \url{http://portal.acm.org/citation.cfm?id=1623280}
+\BIBentrySTDinterwordspacing
+ \begin{quotation}\noindent The Lucas-Kanade optical flow algorithm that can
+  deal with rotation, scaling and shearing. \end{quotation}
+
+\bibitem{StereoDepth}
+\BIBentryALTinterwordspacing
+D.~Nair, ``{A Guide to Stereovision and 3D Imaging - Nasa Tech Briefs :: NASA
+  Tech Briefs},'' Oct. 2012, last accessed 29/04/2016. [Online]. Available:
+  \url{http://www.techbriefs.com/component/content/article/ntb/features/feature-articles/14925}
+\BIBentrySTDinterwordspacing
+ \begin{quotation}\noindent A guide on stereoscopic cameras and 3D vision.
+  \end{quotation}
+
+\bibitem{DroneDevGuide}
+S.~Piskorski, N.~Brulez, P.~Eline, and F.~D'Haeyer, ``{AR.Drone Developer
+  Guide},'' \\url{}, accessed February 2016.
+ \begin{quotation}\noindent The developer guide for the AR Drone 2.0
+  \end{quotation}
+
+\bibitem{PersonalScrum}
+\BIBentryALTinterwordspacing
+J.~Pruitt, ``{Personal Scrum | John Pruitt}.'' [Online]. Available:
+  \url{http://blog.jgpruitt.com/tag/personal-scrum/}
+\BIBentrySTDinterwordspacing
+ \begin{quotation}\noindent A blog of a grduate student who used a "Personal
+  Scrum" methodology \end{quotation}
+
+\bibitem{CVDrone}
+Puku0x, ``{CV Drone (= OpenCV + AR.Drone)}.''
+ \begin{quotation}\noindent A middleware for the AR Drone 2.0 that combines
+  openCV and drone control. \end{quotation}
+
+\bibitem{citeulike:13944234}
+\BIBentryALTinterwordspacing
+------, ``{CVDrone: OpenCV + AR Drone}.'' [Online]. Available:
+  \url{https://github.com/puku0x/cvdrone}
+\BIBentrySTDinterwordspacing
+ \begin{quotation}\noindent The CVDrone github repository. A piece of software
+  for beginners that allows for easy control of the AR.Drone and OpenCV.
+  \end{quotation}
+
+\bibitem{souhila2007optical}
+\BIBentryALTinterwordspacing
+K.~Souhila and A.~Karim, ``{Optical flow based robot obstacle avoidance},''
+  \emph{International Journal of Advanced Robotic Systems}, vol.~4, no.~1, pp.
+  13--16, 2007. [Online]. Available: \url{http://dx.doi.org/10.5772/5715}
+\BIBentrySTDinterwordspacing
+
+
+\bibitem{citeulike:9515178}
+\BIBentryALTinterwordspacing
+M.~V. Srinivasan, ``{Visual control of navigation in insects and its relevance
+  for robotics},'' \emph{Current Opinion in Neurobiology}, vol.~21, no.~4, pp.
+  535--543, Aug. 2011. [Online]. Available:
+  \url{http://dx.doi.org/10.1016/j.conb.2011.05.020}
+\BIBentrySTDinterwordspacing
+ \begin{quotation}\noindent A paper describing the current knowledge on how
+  insects use optical flow for flight. \end{quotation}
+
+\bibitem{PhoneObstacleAvoidance}
+\BIBentryALTinterwordspacing
+R.~Tapu, B.~Mocanu, A.~Bursuc, and T.~Zaharia, ``{A Smartphone-Based Obstacle
+  Detection and Classification System for Assisting Visually Impaired
+  People},'' in \emph{Computer Vision Workshops (ICCVW), 2013 IEEE
+  International Conference on}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE,
+  Dec. 2013, pp. 444--451. [Online]. Available:
+  \url{http://dx.doi.org/10.1109/iccvw.2013.65}
+\BIBentrySTDinterwordspacing
+ \begin{quotation}\noindent An algorithm essentially performing what I want,
+  applied to a mobile phone in motion. \end{quotation}
+
+\bibitem{DenseInterest}
+\BIBentryALTinterwordspacing
+T.~Tuytelaars, ``{Dense interest points},'' in \emph{Computer Vision and
+  Pattern Recognition (CVPR), 2010 IEEE Conference on}.\hskip 1em plus 0.5em
+  minus 0.4em\relax IEEE, June 2010, pp. 2281--2288. [Online]. Available:
+  \url{http://dx.doi.org/10.1109/cvpr.2010.5539911}
+\BIBentrySTDinterwordspacing
+ \begin{quotation}\noindent This paper goes through methods of calculating
+  dense interest points, using regular grid sampling techniques.
+  \end{quotation}
+
+\end{thebibliography}
